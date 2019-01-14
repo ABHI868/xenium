@@ -128,7 +128,23 @@ padding-left: 10px;
   display: table;
   clear: both;
 }
+.arrow{
+    padding: 10px;
 
+    font-weight: bolder;
+
+    vertical-align: super;
+
+    height: 700px;
+
+    position: sticky;
+
+    top: 45%;
+
+    font-size: 45px;
+    color:white;
+
+}
 /* The expanding image container */
 /* .container {
   position: relative;

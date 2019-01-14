@@ -1,0 +1,192 @@
+
+body
+{
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+
+}
+ul{
+    margin :0;
+    padding:0;
+
+}
+.container{
+    margin:0;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+header{ 
+    background-color:royalblue;
+    padding-top: 30px;
+
+    min-height:70px;
+    border-bottom:3px solid black;
+    
+}
+header a{
+
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size: 16px;
+    color:black;
+    font-weight: bold;
+
+}
+ 
+header li{
+    float:left;
+    display:inline;
+    padding:0 20px 0 20px;
+
+}
+header #branding
+{
+    float:left;
+
+}
+header #branding h1{
+    margin: 0;
+}
+header nav{
+    float:right;
+    margin-top: 10px;
+}
+
+header .highlight
+{
+color:darkred;
+font-weight: bold;
+padding-left: 10px;
+}
+
+.sliderbox{
+    position: relative;
+    width:100%;
+    float: left;
+    /* margin-top: 30px; */
+    margin-left: 3%;
+    height: 400px;
+    /* animation-name:slideranimation;
+    animation-duration: 20s;  */
+
+}
+.prev,.next{
+    position: relative;
+    top:20%;
+    size:100px;
+    /* padding: 10px;
+    top:50px; */
+
+}
+.prev:hover,.next:hover{
+    background:rgba(0,0,0,0.8)
+}
+.next{
+    
+}
+.sliderbox img{
+    float: left;
+    margin:0;
+    size: 1px;
+}
+@keyframes slideranimation
+{
+    0%{
+        left:0px;
+    }
+    20%{
+        left:0px;
+    }
+    25%{
+        left:-1000px;
+    }
+}
+
+.column {
+  float: left;
+  width: 22%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+/* .container {
+  position: relative;
+  display: none;
+} */
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  color: white;
+  font-size: 20px;
+  margin-top: 0%;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 1px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.row {
+  max-width: 80px;
+  position: relative;
+  margin: auto;
+}
+.container > .btn{
+    position: absolute;
+    /* padding: 20px; */
+    height: 100px;
+    width: 100px;
+    top: 150px;
+    border: o;
+    /* border-radius: 25px; */
+}
+/* 
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  /* color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+} */ 
+
+/* When you mouse over the container, fade in the overlay title */
+/* .container:hover .overlay {
+  opacity: 1;
+} */

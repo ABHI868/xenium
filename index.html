@@ -1,0 +1,218 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>ImageSlider | Welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/home/abhishek/develop/xenium/style.css">
+    </link>
+    <style>
+
+        #mybgcarousel{ /* CSS for specific carousel container called #mybgcarousel. */
+        width:100%;
+        height:700px;
+        }
+        
+        /* ######### Shared CSS for various parts of carousel (in the event of multiple carousels) ######### */
+        
+        div.bgcarousel{ /* shared CSS for main carousel container */
+        background: black url(ajaxload.gif) center center no-repeat; /* loading gif while caoursel is loading */
+        }
+        
+        div.bgcarousel img.navbutton{ /* CSS for the nav buttons */
+        }
+        
+        div.bgcarousel div.slide{ /* CSS for each image's DIV container within main container */
+        background-color: black;
+        background-position: center center; /* center image within carousel */
+        background-repeat: no-repeat;
+        background-size: cover; /* CSS3 property to scale image within container? "cover" or "contain" */
+        color: black;
+        }
+        
+        div.bgcarousel div.selectedslide{ /* CSS for currently selected slide */
+        }
+        
+        div.bgcarousel div.slide div.desc{ /* DIV that contains the textual description inside .slide */
+        position: absolute;
+        color: white;
+        left: 40px;
+        top: 100px;
+        width:200px;
+        padding: 10px;
+        font: bold 16px sans-serif, Arial;
+        text-shadow: 0 -1px 1px #8a8a8a; /* CSS3 text shadow */
+        z-index:5;
+        }
+        
+        div.bgcarousel div.selectedslide div.desc{ /* CSS for currently selected slide's desc div */
+        }
+        
+        div.bgcarousel div.slide div.desc h2{
+        font-size:150%;
+        margin:0;
+        }
+        
+        div.bgcarousel div.slide div.desc a{
+        color:yellow;
+        text-decoration:none;
+        }
+        .arrow{
+            padding: 10px;
+
+font-weight: bolder;
+
+vertical-align: super;
+
+height: 700px;
+
+position: sticky;
+
+top: 45%;
+
+font-size: 45px;
+color:white;
+        }
+        </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="jquery.velocity.min.js"></script>
+    <script type="text/javascript" src="jquery.touchSwipe.min.js"></script>
+
+    <script src="bgcarousel.js" type="text/javascript">
+
+        /***********************************************
+        * Background Image Carousel- (c) Dynamic Drive (www.dynamicdrive.com)
+        * Please keep this notice intact
+        * Visit http://www.dynamicdrive.com/ for this script and 100s more.
+        ***********************************************/
+
+    </script>
+
+    <script type="text/javascript">
+
+        var firstbgcarousel = new bgCarousel({
+            wrapperid: 'mybgcarousel', //ID of blank DIV on page to house carousel
+            imagearray: [
+                ['autumnpark.jpg', '<h2>Autumn Day</h2>The sun peaks through the trees, a knife that cuts through the chill, crisp air.'], //["image_path", "optional description"]
+                ['chime.jpg', '<h2>Wind Chime</h2>The bellweather of the sky, the chime speaks of impending turmoil.'],
+                ['girlportrait.jpg', 'The scent of spring invigorates her as she inhales whilst the warm breeze brings a wave of tranquility.'],
+                ['redbench.jpg', 'Alone and Lonliness- Peace and Inner Struggle'] //<--no trailing comma after very last image element!
+            ],
+            displaymode: { type: 'auto', pause: 3000, cycles: 2, stoponclick: false, pauseonmouseover: true },
+            navbuttons: ['left.gif', 'right.gif', 'up.gif', 'down.gif'], // path to nav images
+            activeslideclass: 'selectedslide', // CSS class that gets added to currently shown DIV slide
+            orientation: 'h', //Valid values: "h" or "v"
+            persist: true, //remember last viewed slide and recall within same session?
+            slideduration: 500 //transition duration (milliseconds)
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="topWrapper" style="width:100%; margin:0;padding:0; display:inline-block; overflow:hidden;">
+        <div class="container">
+            <header>
+                <div id="branding">
+                    <h1><span class="highlight">Xenium</span> Technologies</h1>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">contact</a></li>
+
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="container" id="wrapper" style="height:90%; display:block">
+            <!-- <div id="mybgcarousel" class="bgcarousel"> -->
+            <!-- <div class="carousel slide" id="slider" data-ride="carousel"> -->
+            <a class="prev arrow" onclick="goPrev()" style="">&#10094;</a>
+            <div class="sliderbox">
+                <div class="column" style="display:block">
+                    <img id="nature" src="/home/abhishek/Downloads/T.jpeg" alt="Dodge" style="width:100%" onclick="myFunction(this);">
+                    <!-- <button class="btn">&#10095;</button> -->
+
+                    <!-- <div class="overlay">
+                        <a href="#" class="" title="User Profile">
+                        <i class="fa fa-user"></i>
+                        </a>
+                    </div> -->
+                    <!-- <div class="overlay"><img src="/home/abhishek/Downloads/nature.jpeg"></div> -->
+                </div>
+                <div class="column">
+                    <img id="snow" src="/home/abhishek/Downloads/lamb.jpeg" alt="Lamborgini" style="width:100%" onclick="myFunction(this);">
+
+                </div>
+                <div class="column">
+                    <img id=" mountains" src="/home/abhishek/Downloads/audi.jpeg" alt="Audi" style="width:100%" onclick="myFunction(this);">
+                </div>
+                <div class="column">
+                    <img id="lights" src="/home/abhishek/Downloads/aston.jpeg" alt="Aston" style="width:100%" onclick="myFunction(this);">
+                    <!-- <button class="btn">&#10095;</button> -->
+
+                </div>
+                <!-- <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg" style="width:100%" >
+                    <div id="imgtext"></div>
+                </div> -->
+
+            </div>
+
+            <a class="next arrow" onclick="goNext()" style="margin-left:90%">&#10095;</a>
+            <!-- </div> -->
+
+        </div>
+
+
+        <div class="container" style="text-align:center;margin-bottom: 0; color:white; font-weight: bold; padding:15px; background:rgba(0,123,101,0.3)">
+            <footer>
+                <p><b>Xenium , Copyright &copy,2019</b></p>
+            </footer>
+        </div>
+    </div>
+    <script>
+        function myFunction(imgs) {
+            setImage(imgs);
+
+        }
+        var images = $('.column img')
+        var currentPos = -1;
+        function goPrev() {
+            if (currentPos <= 0) {
+                currentPos = images.length;
+            }
+            currentPos--;
+            setImage(images[currentPos]);
+
+        }
+        function goNext() {
+
+            if (currentPos > images.length - 1) {
+                currentPos = -1;
+            }
+            currentPos++;
+            setImage(images[currentPos]);
+        }
+
+        function setImage(img) {
+            var expandImg = document.getElementById("topWrapper");
+            //var imgText = document.getElementById("imgtext");
+            // var clickedsrc=this.clickedsrc;
+            // var image=document.getElementById('expandedImg').style.background-image ="url(clickedsrc)";
+
+            expandImg.style.background = "url('" + img.src + "')";
+            expandImg.style.backgroundSize = "cover";//contain
+            expandImg.style.backgroundRepeat = "no-repeat";
+        }
+    </script>
+
+</body>
+
+</html>
